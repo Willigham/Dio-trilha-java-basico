@@ -1,4 +1,4 @@
-public class estruturaFor {
+public class exemploUm {
     public static void main(String[] args) throws Exception {
         
         //Contando carneirinhos
