@@ -3,7 +3,7 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class ProcessoSeletivo2 {
     public static void main(String[] args) {
-       
+       imprimirSelecionados();
     }
 
     static void imprimirSelecionados(){
@@ -12,7 +12,13 @@ public class ProcessoSeletivo2 {
         System.out.println("Imprimindo a lista de candidatos informando o indice do elemento");
 
         for(int indice=0; indice < candidatos.length; indice++){
-            System.out.println("O candidate de nº " + (indice+1) + " é " + candidatos[indice]);
+            System.out.println("O candidate de nº" + (indice+1) + " é " + candidatos[indice]);
+        }
+
+        System.out.println("Forma abreviada de interação for each");
+
+        for(String candidato: candidatos ) {
+            System.out.println("O candidato selecionado foi " + candidato);
         }
     }
 
@@ -47,7 +53,7 @@ public class ProcessoSeletivo2 {
 
         }else if (salarioBase==salarioPretendido)
             System.out.println("LIGAR PARA O CANDIDTO COM CONTRA PROPOSTA"); 
-              
+
         else {
             System.out.println("AGUARDAR O RESULTADO DOS DEMAIS CANDIDATOS");
         } 
