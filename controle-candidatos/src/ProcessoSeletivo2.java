@@ -1,9 +1,35 @@
+import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
 
 public class ProcessoSeletivo2 {
     public static void main(String[] args) {
-       imprimirSelecionados();
+        String [] candidatos = {"FELITE","JULIA","PAULO","AUGUSTO"};
+        for(String candidato: candidatos){
+            entrnadoEmContato(candidato);
+        }
+    }
+    static void entrnadoEmContato (String candidato){
+        int tentativasRealizadas = 1;
+        boolean continuarTentando = true;
+        boolean atendeu = false;
+        do {
+            atendeu = atender();
+            continuarTentando = !atendeu;
+            if(continuarTentando)
+                tentativasRealizadas++;
+            else
+                System.out.println("CONTATO REALIZADO COM SUCESSO");
+
+        }while(continuarTentando && tentativasRealizadas<3);
+        
+        if (atendeu) 
+           System.out.println("CONSEGUIMOS CONTATO COM " + candidato + " NA " + tentativasRealizadas + " TENTATIVA"); 
+        
+    }
+    //metodo auxiliar
+    static boolean atender(){
+        return new Random().nextInt(3)==1;
     }
 
     static void imprimirSelecionados(){
